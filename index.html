@@ -224,17 +224,54 @@
     
     .card-body { padding: 0px 14px 10px; }
 
-    .product-card:hover{
-      border: 1px solid transparent;
-      background:
-        linear-gradient(white, white) padding-box,
-        linear-gradient(135deg, #ff7b00, #ff00c8, #7a00ff) border-box;
+    /* Hover only for desktop/laptop */
+    @media (hover:hover){
+
+      .product-card:hover{
+        border: 1px solid transparent;
+        background:
+          linear-gradient(white, white) padding-box,
+          linear-gradient(135deg, #ff7b00, #ff00c8, #7a00ff) border-box;
+      }
+
+      .product-card:hover .card-img-wrap,
+      .product-card:hover .card-body{
+        background: white;
+      }
     }
-    .product-card:hover .card-img-wrap,
-    .product-card:hover .card-body {
-      background: white;
+    
+    /* Remove blue tap highlight on mobile */
+    .product-card{
+      -webkit-tap-highlight-color: transparent;
+      tap-highlight-color: transparent;
     }
 
+    /* Prevent sticky hover on touch devices */
+    @media (hover: none) {
+
+      .product-card:hover{
+        background: var(--beige);
+        border: 1px solid transparent;
+      }
+
+      .product-card:hover .card-img-wrap,
+      .product-card:hover .card-body{
+        background: transparent;
+      }
+
+      .product-card:active{
+        transform: scale(0.98);
+      }
+    }
+
+    /* Remove focus styles after returning */
+    .product-card:focus,
+    .product-card:focus-visible{
+      outline: none;
+      box-shadow: none;
+      background: var(--beige);
+      border: 1px solid transparent;
+    }
     .card-title {
       font-size: 1rem; font-weight: 700; color: var(--dark-gray); text-align: center;
       line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 1;
@@ -744,7 +781,7 @@ const products = [
   { id:9,  title:"Ruffle Bodycon Dress",              cat:"fashion",     img:"images/Ruffel_bodycon-removebg-preview.png", link:"https://share.google/RLNQs8sG5BJywvN8w" },
   { id:10, title:"Kiss Kandy Lip Balm",               cat:"essentials",  img:"images/Lip Balm swiss.jpg", link:"https://amzn.in/d/05Y2xd8w" },
   { id:11, title:"Wine Heels",                        cat:"fashion",     img:"images/wine_heel-removebg-preview.png", link:"https://share.google/SQMwg30lVXdJNgnUl" },
-  { id:12, title:"Sweetheart Bodycon Dress",     cat:"fashion",     img:"images/sweetheart-removebg-preview.png", link:"https://share.google/gZC9eEGeYmLxzUeun" },
+  { id:12, title:"Sweetheart Bodycon Dress",          cat:"fashion",     img:"images/sweetheart-removebg-preview.png", link:"https://share.google/gZC9eEGeYmLxzUeun" },
 ];
 
 function renderCard(p) {
