@@ -1,0 +1,19 @@
+{
+  "name": "chanchkriti-my-wardrobe",
+  "version": "1.0.0",
+  "description": "My Wardrobe - Creators affiliate store website",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "wardrobe",
+    "affiliate",
+    "store"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
