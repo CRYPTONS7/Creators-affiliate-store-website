@@ -125,6 +125,18 @@
     .cat-pill:hover { border-color: var(--rose); color: var(--espresso); background: var(--blush); }
     .cat-pill.active { background: var(--espresso); color: white; border-color: var(--espresso); }
 
+    .cat-pill{
+    -webkit-tap-highlight-color: transparent;
+    tap-highlight-color: transparent;
+    outline: none;
+    }
+    
+    .cat-pill:focus,
+    .cat-pill:focus-visible{
+        outline: none;
+        box-shadow: none;
+    }
+
     /* ══ SECTION WRAP ══ */
     .section-wrap { max-width: 1280px; margin: 0 auto; padding: 0 16px; text-align: center; }
 
